@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Dark Mode Remover</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <a class="github-fork-ribbon" href="http://url.to-your.repo" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 pt-16 pb-4 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-center mx-auto mb-2" viewBox="0 0 512 512"
+                style="enable-background:new 0 0 512 512" xml:space="preserve">
+                <circle cx="256" cy="256" fill="#685e68" r="256" data-original="#685e68" />
+                <circle cx="252.508" cy="256" fill="#fd3" r="148.147" data-original="#ffdd33" />
+                <path
+                    d="M280.611 401.49c-9.1 1.75-18.5 2.66-28.11 2.66-81.82 0-148.14-66.33-148.14-148.15s66.32-148.15 148.14-148.15c9.61 0 19.01.91 28.11 2.66-68.38 13.13-120.05 73.28-120.05 145.49s51.67 132.36 120.05 145.49z"
+                    fill="#ffbf4d" data-original="#ffbf4d" />
+                <path
+                    d="M252.508 17.069c-14.325 0-25.938 11.613-25.938 25.938v17.957c0 14.325 11.613 25.938 25.938 25.938s25.938-11.613 25.938-25.938V43.007c.001-14.325-11.612-25.938-25.938-25.938zm0 408.028c-14.325 0-25.938 11.613-25.938 25.938v17.957c0 14.325 11.613 25.938 25.938 25.938s25.938-11.613 25.938-25.938v-17.957c.001-14.325-11.612-25.938-25.938-25.938zM133.043 49.08c-12.406 7.163-16.657 23.026-9.494 35.432l8.979 15.551c7.163 12.406 23.026 16.657 35.432 9.494 12.406-7.163 16.657-23.026 9.494-35.432l-8.979-15.551c-7.162-12.406-23.026-16.657-35.432-9.494zm-87.455 87.455c-7.163 12.406-2.912 28.27 9.494 35.432l15.551 8.979c12.406 7.163 28.27 2.912 35.432-9.494 7.163-12.406 2.912-28.27-9.494-35.432l-15.551-8.979c-12.406-7.163-28.269-2.912-35.432 9.494zM13.578 256c0 14.325 11.613 25.938 25.938 25.938h17.957c14.325 0 25.938-11.613 25.938-25.938s-11.613-25.938-25.938-25.938H39.516c-14.325 0-25.938 11.613-25.938 25.938zm32.01 119.465c7.163 12.406 23.026 16.657 35.432 9.494l15.551-8.979c12.406-7.163 16.657-23.026 9.494-35.432-7.163-12.406-23.026-16.657-35.432-9.494l-15.551 8.979c-12.406 7.163-16.656 23.026-9.494 35.432zm87.455 87.455c12.406 7.163 28.27 2.912 35.432-9.494l8.979-15.551c7.163-12.406 2.912-28.27-9.494-35.432-12.406-7.163-28.27-2.912-35.432 9.494l-8.979 15.551c-7.163 12.406-2.912 28.269 9.494 35.432z"
+                    data-original="#ffdd33" fill="#fd3" />
+                <circle cx="350.275" cy="256" fill="#554e56" r="148.147" data-original="#554e56" />
+            </svg>
+            <h1 class="text-3xl font-medium title-font text-gray-900 text-center">Tailwind Dark Mode Remover</h1>
+            <p class="mt-2 text-sm text-gray-500 text-center mb-12">Easily remove Dark Mode classes from your Tailwind
+                CSS code 🌙❌ Simply paste in your code. The updated code will be generated automatically. </p>
+            <div class="flex flex-wrap -m-4">
+                <div class="p-4 md:w-1/2 w-full">
+                    <label for="tw-code" class="block mb-4 text-sm font-medium text-gray-900 pl-4">Paste your Tailwind
+                        code
+                        here ⬇️ :</label>
+                    <div id="tw-code" style="height:60vh; width: 100%;" class="mx-2 rounded border border-gray-300">
+                    </div>
+                </div>
+                <div class="p-4 md:w-1/2 w-full">
+                    <!-- 2 divs: one on the left contains result and the one on the right contains button -->
+                    <div class="flex justify-between">
+                        <label for="result" class="block mb-2 text-sm font-medium text-gray-900 pl-4">Result: <span
+                                id="count"></span></label>
+                        <button id="copy"
+                            class="bg-slate-500 hover:bg-slate-700 text-white text-xs py-1 px-4 mb-2 rounded">
+                            📝 Copy to clipboard
+                        </button>
+                    </div>
+                    <div id="result" style="height:60vh; width: 100%;" class="mx-2 rounded border border-gray-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- credits -->
+    <section class="text-gray-600 body-font">
+        <div class="container mx-auto">  
+            <div class="flex flex-wrap w-full flex-col items-center text-center">
+                <p class="lg:w-1/2 w-full leading-relaxed text-sm">Made with ❤️ by <a
+                        href="https://github.com/Ademking" class="text-blue-500">Ademking</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.21.2/min/vs/loader.min.js"></script>
+    <script>
+        require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.21.2/min/vs' } })
+        window.MonacoEnvironment = {
+            getWorkerUrl: function (workerId, label) {
+                return `data:text/javascript;charset=utf-8,${encodeURIComponent(`
+          self.MonacoEnvironment = {
+            baseUrl: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.21.2/min/'
+          };
+          importScripts('https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.21.2/min/vs/base/worker/workerMain.js');`
+                )}`
+            }
+        }
+        require(['vs/editor/editor.main'], function () {
+            const twEditor = monaco.editor.create(document.getElementById('tw-code'), {
+                value: [''].join('\n'),
+                language: 'html',
+                minimap: {
+                    enabled: false
+                },
+                wordWrap: 'wordWrapColumn',
+                wordWrapMinified: true,
+                wrappingIndent: 'indent'
+
+            })
+            const resultEditor = monaco.editor.create(document.getElementById('result'), {
+                value: [''].join('\n'),
+                language: 'html',
+                minimap: {
+                    enabled: false
+                },
+                wordWrap: 'wordWrapColumn',
+                wordWrapMinified: true,
+                wrappingIndent: 'indent'
+            })
+
+            // detect when value changes on twEditor
+            twEditor.onDidChangeModelContent((e) => {
+                const code = twEditor.getValue();
+                const regex = /dark:\w+([-:\w]*\w)/g;
+                // show how many matches are found
+                if (code.match(regex)) {
+                    const countElem = document.getElementById('count');
+                    const countRes = code.match(regex).length
+                    countElem.innerHTML = `(${countRes} Dark mode classe${countRes > 1 ? 's' : ''} removed)`;
+                }
+                else {
+                    const countElem = document.getElementById('count');
+                    countElem.innerHTML = '';
+                }
+                const newCode = code.replace(regex, '');
+                console.log(newCode)
+                resultEditor.setValue(newCode);
+            })
+
+            // copy to clipboard
+            const copyBtn = document.getElementById('copy');
+            copyBtn.addEventListener('click', () => {
+                const code = resultEditor.getValue();
+                navigator.clipboard.writeText(code);
+                setTimeout(() => {
+                    copyBtn.innerHTML = '✅ Copied!';
+                }, 100)
+                setTimeout(() => {
+                    copyBtn.innerHTML = '📝 Copy to clipboard';
+                }, 1000)
+            })
+        })
+    </script>
+
+</body>
+
+</html>
